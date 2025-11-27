@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    // Sample data for one vehicle
+    string vehicleID = "A12";
+    string type = "Car";
+    int entryHour = 8;
+    int exitHour = 14;
+
+    int parkedHours = exitHour - entryHour;
+    double rate = 0;
+
+    // Set hourly rate based on vehicle type
+    if (type == "Car") rate = 10;
+    else if (type == "Bus") rate = 20;
+    else if (type == "StaffCar") rate = 5;
+
+    double totalCharge = parkedHours * rate;
+
+    cout << "Vehicle " << vehicleID << " (" << type << ") parked for "
+        << parkedHours << " hours. Charge: $" << totalCharge << endl;
+
+    return 0;
+}
